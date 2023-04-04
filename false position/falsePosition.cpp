@@ -3,13 +3,16 @@
 
 using namespace std;
 
-float customFunction(float m)
+double customFunction(double c) {
+    return cos(c) - c * exp(c);
+}
+void falsePosition(double a, double b, double tol)
 {
-    float result= (m*m*m)-(5*m)+1;
-    return result;
+    double c= ((a * customFunction(b)) -  (b * customFunction(a))) / (b-a);
+    cout<<c;
 }
 
 int main()
 {
-
+    falsePosition(1, -2.17798, 0.001);
 }
